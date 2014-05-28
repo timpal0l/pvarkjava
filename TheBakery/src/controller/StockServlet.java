@@ -61,7 +61,9 @@ public class StockServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		String name = request.getParameter("name");
+		String pass = request.getParameter("pass");
+		
 	}
 
 }

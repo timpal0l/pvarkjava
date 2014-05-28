@@ -8,7 +8,31 @@
 <title>TheBakery::login</title>
 </head>
 <body>
-	<h1>Login</h1>
-	<c>//create login form that checks if the user exists in the DB.</c>
+
+	<form action="register" method="post">
+	
+		<h1>Login to order cookies and cakes.. yummy!</h1>
+		<table border="0" cellspacing="5" align="center">
+			<tr>
+				<td colspan="2"></td>
+			</tr>
+			<tr>
+				<th align="right">Username:</th>
+				<td align="left"><input type="text" name="username"></td>
+			</tr>
+			<tr>
+				<th align="right">Password:</th>
+				<td align="left"><input type="password" name="password"></td>
+			</tr>
+			<tr>
+				<td align="right"><input type="submit" value="Log In"></td>
+				<td align="left"><input type="reset"></td>
+			</tr>
+			<tr>
+				<td><a href="shop?action=newuser">I ain't got no account</a></td>
+			</tr>
+		</table>
+
+	</form>
 </body>
 </html>
