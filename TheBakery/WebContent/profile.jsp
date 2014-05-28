@@ -5,9 +5,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>The Bakery</title>
+<title>TheBakery::profile</title>
 </head>
 <body>
-	<h1>The Bakery</h1>
+	<h1>Profile</h1>
 </body>
 </html>
