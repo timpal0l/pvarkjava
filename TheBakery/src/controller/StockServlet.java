@@ -10,18 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.StockBean;
+
 /**
  * Servlet implementation class BakeryServlet
  */
-@WebServlet("/BakeryServlet")
-public class BakeryServlet extends HttpServlet {
+@WebServlet("/stock")
+public class StockServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
 
-	public BakeryServlet() {
+	public StockServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -31,7 +33,7 @@ public class BakeryServlet extends HttpServlet {
 	 */
 
 	public void init(ServletConfig config) throws ServletException {
-		// TODO Auto-generated method stub
+		super.init(config);
 	}
 
 	/**
@@ -47,7 +49,10 @@ public class BakeryServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		response.setContentType("text/html");
+		StockBean stock = new StockBean();
+        request.setAttribute("stock", stock);  
+        getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);  
 	}
 
 	/**

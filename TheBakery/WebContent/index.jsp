@@ -9,6 +9,10 @@
 </head>
 <body>
 	<h1>The Bakery</h1>
+	<h2>A user: ${stock.username}</h2>
+	<form action='stock' method='get'>
+		<button type='submit'>Reload!</button>
+	</form>
 	<c>//Main page where we should have an overview of the StockBean</c>
 </body>
 </html>

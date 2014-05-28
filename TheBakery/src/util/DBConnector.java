@@ -4,12 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public abstract class DBConnector {
-	protected String url = "jdbc:mysql://localhost/bakery";
-	protected String dbUser = "root";
-	protected String pass = "YouWillNeverRealizeHowFuckingLongThisPasswordIs!";
+public class DBConnector {
+	protected String url = "jdbc:mysql://mindlevel.net/bakery";
+	protected String dbUser = "bakery";
+	protected String pass = "lolpass";
 
-	protected Connection getConnection() {
+	public Connection getConnection() {
 		Connection conn = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
