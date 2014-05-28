@@ -10,7 +10,7 @@
 <body>
 
 	<form action="register" method="post">
-	
+
 		<h1>Login to order cookies and cakes.. yummy!</h1>
 		<table border="0" cellspacing="5" align="center">
 			<tr>
@@ -26,10 +26,11 @@
 			</tr>
 			<tr>
 				<td align="right"><input type="submit" value="Log In"></td>
-				<td align="left"><input type="reset"></td>
+				<td align="left"><input type="reset" value="Reset"></td>
 			</tr>
 			<tr>
-				<td><a href="shop?action=newuser">I ain't got no account</a></td>
+				<td><a href="..somewhere over the rainbow">I ain't got no
+						account</a></td>
 			</tr>
 		</table>
 

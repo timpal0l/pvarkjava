@@ -8,6 +8,6 @@
 </head>
 <body>
 	<h1>Login error</h1>
-	<c>//display a login error</c>
+	<center>//display a login error</center>
 </body>
 </html>

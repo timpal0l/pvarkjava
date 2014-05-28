@@ -9,8 +9,8 @@
 <body>
 
 	<h1>Thank you</h1>
-	<c>Your order has been saved to the database and will be shipped
-	shortly</c>
+	<center>Your order has been saved to the database and will be shipped
+	shortly</center>
 	<br />
 
 </body>
