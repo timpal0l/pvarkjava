@@ -24,8 +24,8 @@ public class StockBean {
         try {
         	DBConnector dbms = new DBConnector();
     		Connection conn = dbms.getConnection();
-            PreparedStatement ps = conn.prepareStatement("SELECT id, name, amount, description, price FROM product WHERE name LIKE %?%");
-            ps.setString(1, parameter);
+            PreparedStatement ps = conn.prepareStatement("SELECT id, name, amount, description, price FROM product WHERE name LIKE ?");
+            ps.setString(1, "%" + parameter + "%");
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
             	ProductBean pb = 

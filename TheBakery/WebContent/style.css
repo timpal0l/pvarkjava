@@ -86,3 +86,13 @@ header {
 	margin: 0px;
 	box-shadow: 0px 2px 2px #09103D;
 }
+
+.stock-table td {
+	margin-right: 30px;
+	margin-bottom: 5px;
+}
+
+.stock-table tr:hover {
+    background-color: #A8E7FF;
+    cursor: pointer;
+}

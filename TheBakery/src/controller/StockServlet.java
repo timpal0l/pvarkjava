@@ -33,7 +33,8 @@ public class StockServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		StockBean stock = new StockBean(request.getParameter("search"));
+		String parameter = request.getParameter("search") == null ? "" : request.getParameter("search");
+		StockBean stock = new StockBean(parameter);
 		request.setAttribute("stock", stock);
 		getServletContext().getRequestDispatcher("/index.jsp").forward(request,
 				response);
