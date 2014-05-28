@@ -14,7 +14,7 @@
 	    <tr>
 	       <td>Name</td>
 	       <td>Price</td>
-	       <td>In Stock</td>
+	       <td>Stock</td>
 	    </tr>  
         
        <c:forEach items="${stock.stock}" var="o">
@@ -24,18 +24,13 @@
 				<td>${o.amount}</td>
 				<td>
 				    <form action="" method="post">
-				    <input type="hidden" name="id" value="${o.id}">
+				       <input type="hidden" name="id" value="${o.id}">
 	                   <input type="submit" name="buy" value="Buy" />
-	                   </form>
-	               </td>
+	               </form>
+	            </td>
 			</tr>
 		</c:forEach>
 
 	</table>
-	<form action='stock' method='get'>
-		<button type='submit'>Reload!</button>
-	</form>
-	<center>//Main page where we should have an overview of the
-		StockBean</center>
 </body>
 </html>
