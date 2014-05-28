@@ -9,83 +9,80 @@ h1 {
 }
 
 .menu a {
-    color: #000 !important;
+	color: #000 !important;
 }
 
 .menu img {
-    height: 35px;
-/*     transition:all .2s;  */
+	height: 35px;
+	/*     transition:all .2s;  */
 }
 
 .menu img:hover {
-    cursor: pointer;
-    height: 45px;
-    margin-top: -10px;
-    transition:all .2s ease-in-out; 
+	cursor: pointer;
+	height: 45px;
+	margin-top: -10px;
+	transition: all .2s ease-in-out;
 }
 
 .menu img:active {
-    cursor: pointer;
-    transition:none;
+	cursor: pointer;
+	transition: none;
 }
 
 .menu ul {
-    margin: 0px 0px 10px;
-    padding: 0 1em;
+	margin: 0px 0px 10px;
+	padding: 0 1em;
 }
 
 .menu li {
-    display: inline;
-    padding: 0 0.5em;
+	display: inline;
+	padding: 0 0.5em;
 }
 
 .menu li a {
-    display: inline-block;
+	display: inline-block;
 }
 
-.menu a:hover > .page-name {
-    transition: none;
-    display: block;
-    margin-left: -27px;
+.menu a:hover>.page-name {
+	transition: none;
+	display: block;
+	margin-left: -27px;
 }
 
 .menu a:active .page-name {
-/*     font-size: 90%; */
-/*     font-weight: bold; */
+	/*     font-size: 90%; */
+	/*     font-weight: bold; */
+	
 }
 
 .page-name {
-    transition: none;
-    position: absolute;
-    display: none;
-    color: black;
-    text-align: center;
-    width: 100px;
+	transition: none;
+	position: absolute;
+	display: none;
+	color: black;
+	text-align: center;
+	width: 100px;
 }
 
 .menu {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 10px;
-    vertical-align: middle;
-    text-align: center;
-    clear: both;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 10px;
+	vertical-align: middle;
+	text-align: center;
+	clear: both;
 }
 
 header {
-    top: 0;
-    position: fixed;
-    z-index: 3;
-    opacity: 0.9;
-    min-height: 55px;
-    width: 100%;
-    background-color: #199fd2;
-    color: white;
-    margin: 0px;
-    box-shadow: 0px 2px 2px #09103D;
+	top: 0;
+	position: fixed;
+	z-index: 3;
+	opacity: 0.9;
+	min-height: 55px;
+	width: 100%;
+	background-color: #199fd2;
+	color: white;
+	margin: 0px;
+	box-shadow: 0px 2px 2px #09103D;
 }
-
-
-
-

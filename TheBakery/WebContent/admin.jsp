@@ -9,5 +9,8 @@
 </head>
 <body>
 	<h1>Admin</h1>
+	<c>//There should also be an interface for the manager that allows
+	him/her to 1order new components and to add new products. This should
+	of course afect the data stored in the databases.</c>
 </body>
 </html>
