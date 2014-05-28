@@ -9,5 +9,6 @@
 </head>
 <body>
 	<h1>The Bakery</h1>
+	<c>//Main page where we should have an overview of the StockBean</c>
 </body>
 </html>

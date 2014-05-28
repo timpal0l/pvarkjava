@@ -5,7 +5,7 @@ public class UserBean {
 	private String name;
 	private String password;
 	private String address;
-	
+
 	public String getName() {
 		return name;
 	}

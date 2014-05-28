@@ -9,5 +9,6 @@
 </head>
 <body>
 	<h1>Profile</h1>
+	<c>//have to be logged in to show and edit the $Users profile.</c>
 </body>
 </html>

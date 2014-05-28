@@ -9,5 +9,6 @@
 </head>
 <body>
 	<h1>Login</h1>
+	<c>//create login form that checks if the user exists in the DB.</c>
 </body>
 </html>

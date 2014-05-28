@@ -9,5 +9,6 @@
 </head>
 <body>
 	<h1>Basket</h1>
+	<c>//This will show your current basket of products with price</c>
 </body>
 </html>
