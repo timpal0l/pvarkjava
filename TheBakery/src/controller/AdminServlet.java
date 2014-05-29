@@ -65,24 +65,23 @@ public class AdminServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-
-		String tmpAmount = request.getParameter("amount");
-		int amount = Integer.parseInt(tmpAmount);
-
 		try {
+			String tmpAmount = request.getParameter("amount");
+			int amount = Integer.parseInt(tmpAmount);
 			String tmpId = request.getParameter("id");
 			int id = Integer.parseInt(tmpId);
 
 			PreparedStatement ps = conn
-					.prepareStatement("UPDATE component SET amount = amount + ? WHERE id=?");
+					.prepareStatement("UPDATE component SET amount = amount + ? WHERE id=? AND amount+? >= 0");
 			ps.setInt(1, amount);
 			ps.setInt(2, id);
+			ps.setInt(3, amount);
 			ps.executeUpdate();
-
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} catch (NumberFormatException nfe) {
+			//Do nothing, the user is stupid
 		}
-
 		response.sendRedirect("admin");
 	}
 

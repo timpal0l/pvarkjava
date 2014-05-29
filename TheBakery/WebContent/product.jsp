@@ -11,7 +11,7 @@
 <body>
 	<h1>${product.name}</h1>
 	<h2>${product.description}</h2>
-	<p><b>Ingredients:</b> <c:forEach items="${product.componentList}" var="c">${c}&nbsp;</c:forEach></p>
+	<p><b>Ingredients:</b> <c:forEach items="${product.componentList}" var="c">${c.name}&nbsp;</c:forEach></p>
 	
 	<p><b>Stock:</b> ${product.amount}</p>
 	<p><b>Price:</b> ${product.price}</p>

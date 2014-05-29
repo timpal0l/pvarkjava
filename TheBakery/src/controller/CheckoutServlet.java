@@ -56,6 +56,8 @@ public class CheckoutServlet extends HttpServlet {
 		if(LoginServlet.getUser(request) == null) {
 			getServletContext().getRequestDispatcher("/login.jsp").forward(request,
 					response);
+		} else if(basket.getBasket().size() == 0) {
+			response.sendRedirect("basket");
 		} else {
 			user = LoginServlet.getUser(request);
 			try {
