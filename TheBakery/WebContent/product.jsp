@@ -15,9 +15,9 @@
 	
 	<p><b>Stock:</b> ${product.amount}</p>
 	<p><b>Price:</b> ${product.price}</p>
-	<form action="cart" method="post">
-		<input type="hidden" name="id" value="${product.id}"> 
-		<input type="submit" name="buy" value="Buy" />
+	<form action="basket" method="post">
+		<input type="hidden" name="add" value="${product.id}"> 
+		<input type="submit" value="Buy" />
 	</form>
 </body>
 </html>

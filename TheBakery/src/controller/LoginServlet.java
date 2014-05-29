@@ -61,13 +61,14 @@ public class LoginServlet extends HttpServlet {
 			Connection conn = dbms.getConnection();
 
 			PreparedStatement ps = conn.prepareStatement(
-					"SELECT username, admin, address FROM user WHERE username = ? AND password = ?");
+					"SELECT user_id, username, admin, address FROM user WHERE username = ? AND password = ?");
 
 			ps.setString(1, username); 
 			ps.setString(2, password);
 			ResultSet rs = ps.executeQuery();
 			if(rs.next()) {
 				UserBean user = new UserBean();
+				user.setId(rs.getInt("user_id"));
 				user.setName(rs.getString("username"));
 				user.setAddress(rs.getString("address"));
 				users.put(request.getSession().getId(), user);

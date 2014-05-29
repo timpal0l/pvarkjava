@@ -23,4 +23,8 @@ public class BasketBean {
 	public ArrayList<ProductBean> getBasket() {
 		return basket;
 	}
+	
+	public void clear() {
+		basket.clear();
+	}
 }

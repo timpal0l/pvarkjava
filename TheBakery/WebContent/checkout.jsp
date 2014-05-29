@@ -6,36 +6,42 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>TheBakery::basket</title>
+<title>TheBakery::CheckOut</title>
 </head>
 <body>
-	<h1>Basket</h1>
-    <table class="stock-table">
-        <tr>
-           <td><b>Name</b></td>
-           <td><b>Price</b></td>
-        </tr>  
-        
-       <c:forEach items="${basket.basket}" var="b">
-            <tr>
-                <td><a href="product?id=${b.id}">${b.name}</a></td>
-                <td>${b.price}</td>
-                <td>
-                    <form action="basket" method="post">
-                       <input type="hidden" name="remove" value="${b.id}">
-                       <input type="submit" value="Remove" />
-                   </form>
-                </td>
-            </tr>
-        </c:forEach>
+	<h1>Check out</h1>
+	<c:set var="total" scope="session" value="0" />
+	<c:set var="items" scope="session" value="0" />
+	<c:forEach items="${basket.basket}" var="o">
+		<c:set var="total" value="${total+o.price}" />
+		<c:set var="items" value="${items+1}" />
+	</c:forEach>
+	<table>
+		<tr>
+			<td>
+					<b>Total:</b>
+			</td>
+			<td>
+					<c:out value="${total}" />
+		    </td>
+		</tr>
         <tr>
             <td>
-            <a href="checkout">
-                <button>Check out</button>
-            </a>
+                    <b># of items:</b>
             </td>
-        </tr>
-    </table>
+            <td>
+                    <c:out value="${items}" />
+            </td>
+        </tr> 
+		<tr>
+			<td>
+				<form action="checkout" method="post">
+					<input type="hidden" name="pay" value="true"> <input
+						type="submit" value="Pay" />
+				</form>
+			</td>
+		</tr>
+	</table>
 
 </body>
 </html>
