@@ -10,7 +10,7 @@ import java.util.List;
 import util.DBConnector;
 
 public class ProductBean {
-	List<String> componentList = new ArrayList<String>();
+	List<ComponentBean> componentList = new ArrayList<ComponentBean>();
 	int id, amount;
 	String name, description;
 	double price;
@@ -27,21 +27,30 @@ public class ProductBean {
         try {
         	DBConnector dbms = new DBConnector();
     		Connection conn = dbms.getConnection();
-            PreparedStatement ps = conn.prepareStatement("SELECT id, name, amount, description, price FROM product WHERE id = ?");
+            PreparedStatement ps = conn.prepareStatement("SELECT id, name, description, price FROM product WHERE id = ?");
             ps.setInt(1, parameter);
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
             	setId(rs.getInt("id"));
             	setName(rs.getString("name"));
             	setDescription(rs.getString("description"));
-            	setAmount(rs.getInt("amount"));
             	setPrice(rs.getDouble("price"));
-                ps = conn.prepareStatement("SELECT name FROM component INNER JOIN product_component ON component_id = id WHERE product_id = ?");
+                ps = conn.prepareStatement(
+                		"SELECT id, name, amount FROM component "
+                		+ "INNER JOIN product_component "
+                		+ "ON component_id = id WHERE product_id = ?");
                 ps.setInt(1, getId());
                 ResultSet rs2 = ps.executeQuery();
+                int amount = Integer.MAX_VALUE;
                 while(rs2.next()) {
-                	componentList.add(rs2.getString("name"));
+                	amount = amount < rs2.getInt("amount") ? amount : rs2.getInt("amount"); 
+                	componentList.add(
+                			new ComponentBean(
+                					rs2.getInt("id"),
+                					rs2.getInt("amount"),
+                					rs2.getString("name")));
             	}
+                setAmount(amount);
                 rs2.close();
             }
             rs.close();
@@ -92,11 +101,11 @@ public class ProductBean {
 		this.price = price;
 	}
 	
-	public List<String> getComponentList() {
+	public List<ComponentBean> getComponentList() {
 		return componentList;
 	}
 
-	public void setComponentList(List<String> componentList) {
+	public void setComponentList(List<ComponentBean> componentList) {
 		componentList = componentList;
 	}
 }

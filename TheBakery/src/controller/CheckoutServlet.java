@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import util.DBConnector;
 import beans.BasketBean;
+import beans.ComponentBean;
 import beans.ProductBean;
 import beans.UserBean;
 
@@ -75,10 +76,12 @@ public class CheckoutServlet extends HttpServlet {
 						ps2.setInt(1, orderId);
 						ps2.setInt(2, product.getId());
 						ps2.executeUpdate();
-						PreparedStatement ps3 = conn.prepareStatement(
-								"UPDATE `product` SET amount = amount-1 WHERE id = ?");
-						ps3.setInt(1, product.getId());
-						ps3.executeUpdate();
+						for(ComponentBean component : product.getComponentList()) {
+							PreparedStatement ps3 = conn.prepareStatement(
+									"UPDATE `component` SET amount = amount-1 WHERE id = ?");
+							ps3.setInt(1, component.getId());
+							ps3.executeUpdate();
+						}
 
 					}
 					basket.clear();
