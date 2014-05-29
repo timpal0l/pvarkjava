@@ -92,7 +92,7 @@ header {
 	margin-bottom: 5px;
 }
 
-.stock-table tr:hover {
+.stock-table tr:not(:first-child):hover {
     background-color: #A8E7FF;
     cursor: pointer;
 }

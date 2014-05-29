@@ -29,8 +29,7 @@ v<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 				<td align="left"><input type="reset" value="Reset"></td>
 			</tr>
 			<tr>
-				<td><a href="..somewhere over the rainbow">I ain't got no
-						account</a></td>
+				<td><a href="register">I ain't got no account</a></td>
 			</tr>
 		</table>
 
