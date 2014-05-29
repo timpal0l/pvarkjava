@@ -70,10 +70,16 @@ public class CheckoutServlet extends HttpServlet {
 				if(rs.next()) {
 					int orderId = rs.getInt(1);
 					for(ProductBean product : basket.getBasket()) {
-						ps = conn.prepareStatement(
+						PreparedStatement ps2 = conn.prepareStatement(
 								"INSERT INTO `order_product` (order_id, product_id) VALUES (?, ?)");
-						ps.setInt(1, orderId);
-						ps.setInt(2, product.getId());
+						ps2.setInt(1, orderId);
+						ps2.setInt(2, product.getId());
+						ps2.executeUpdate();
+						PreparedStatement ps3 = conn.prepareStatement(
+								"UPDATE `product` SET amount = amount-1 WHERE id = ?");
+						ps3.setInt(1, product.getId());
+						ps3.executeUpdate();
+
 					}
 					basket.clear();
 					getServletContext().getRequestDispatcher("/thankyou.jsp").forward(request,

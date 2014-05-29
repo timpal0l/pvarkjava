@@ -6,6 +6,15 @@ public class UserBean {
 	private String name;
 	private String password;
 	private String address;
+	private boolean isAdmin;
+
+	public boolean isAdmin() {
+		return isAdmin;
+	}
+
+	public void setAdmin(boolean isAdmin) {
+		this.isAdmin = isAdmin;
+	}
 
 	public String getName() {
 		return name;

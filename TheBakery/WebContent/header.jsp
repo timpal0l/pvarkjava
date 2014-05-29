@@ -37,6 +37,12 @@
 						<p class="page-name">Login</p>
 					</a>
 				</li>
+				<li>
+                    <a class="page" href="logout">
+                        <img src="./images/icons/logout.svg" alt="Logout">
+                        <p class="page-name">Log out</p>
+                    </a>
+                </li>
 			</ul>
 		</nav>
 	</header>
