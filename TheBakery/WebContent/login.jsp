@@ -9,7 +9,7 @@ v<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 </head>
 <body>
 
-	<form action="register" method="post">
+	<form action="login" method="post">
 
 		<h1>Login to order cookies and cakes.. yummy!</h1>
 		<table border="0" cellspacing="5" align="center">
