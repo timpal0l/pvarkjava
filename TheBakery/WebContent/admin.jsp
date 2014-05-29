@@ -10,36 +10,12 @@
 </head>
 <body>
 	<h1>Admin page</h1>
-
-		<table class="products-table">
-			<tr>
-				<td><b>Products</b></td>
-				<td><b>Current amount</b></td>
-				<td><b>Order new</b></td>
-			</tr>
-
-			<c:forEach items="${stock.stock}" var="o">
-				<tr>
-					<td><a href="product?id=${o.id}">${o.name}</a></td>
-					<td>${o.amount}</td>
-					<td>
-						<form action="admin" method="post">
-							<input type="hidden" name="id" value="${o.id}"/> 
-							<input type="text" name="amount" /> 
-							<input type="submit" name="order" value="Order" />
-						</form>
-					</td>
-				</tr>
-			</c:forEach>
-		</table>
-
-	</br>
-	</br>
+	<h2>Order components</h2>
 
 	<table class="components-table">
 		<tr>
 			<td><b>Components</b></td>
-			<td><b>Current amount</b></td>
+			<td><b>Amount</b></td>
 			<td><b>Order new</b></td>
 		</tr>
 
@@ -49,14 +25,15 @@
 				<td>${o.amount}</td>
 				<td>
 					<form action="admin" method="post">
-						<input type="hidden" name="id" value="${o.id}"> <input
-							type="text" name="newAmount" value="" /> <input type="submit"
-							name="order" value="Order" />
+						<input type="hidden" name="id" value="${o.id}">
+						<input type="text" name="amount" value="" /> 
+						<input type="submit"name="order" value="Order" />
 					</form>
 				</td>
 			</tr>
 		</c:forEach>
 	</table>
+	
 
 </body>
 </html>

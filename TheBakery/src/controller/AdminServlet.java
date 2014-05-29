@@ -58,12 +58,11 @@ public class AdminServlet extends HttpServlet {
 		try {
 			String tmpId = request.getParameter("id");
 			int id = Integer.parseInt(tmpId);
-			
+
 			PreparedStatement ps = conn
-					.prepareStatement("UPDATE product SET amount = amount + ? WHERE id=?");
+					.prepareStatement("UPDATE component SET amount = amount + ? WHERE id=?");
 			ps.setInt(1, amount);
 			ps.setInt(2, id);
-			
 			ps.executeUpdate();
 
 		} catch (SQLException e) {
