@@ -27,13 +27,11 @@ public class StockBean {
 			DBConnector dbms = new DBConnector();
 			Connection conn = dbms.getConnection();
 			PreparedStatement ps = conn
-					.prepareStatement("SELECT id, name, amount, description, price FROM product WHERE name LIKE ?");
+					.prepareStatement("SELECT id FROM product WHERE name LIKE ?");
 			ps.setString(1, "%" + parameter + "%");
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
-				ProductBean pb = new ProductBean(rs.getInt("id"),
-						rs.getString("name"), rs.getString("description"),
-						rs.getInt("amount"), rs.getDouble("price"));
+				ProductBean pb = new ProductBean(rs.getInt("id"));
 				stock.add(pb);
 			}
 			rs.close();

@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h1>Welcome!!!</h1>
-	<h2>This is your profile</h2>>
+	<h2>This is your profile</h2>
 	<table >
 	    <tr>
 	       <td><b>Username: </b></td>
