@@ -33,7 +33,7 @@
 	</table>
 	<form action="stock" method="get">
 	    <input type="text" name="search" value="">
-	    <input type="submit" name="search" />
+	    <input type="submit" value="Search" />
 	</form>
 </body>
 </html>
