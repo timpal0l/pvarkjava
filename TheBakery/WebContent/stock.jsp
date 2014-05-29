@@ -23,9 +23,9 @@
 				<td>${o.price}</td>
 				<td>${o.amount}</td>
 				<td>
-				    <form action="" method="post">
-				       <input type="hidden" name="id" value="${o.id}">
-	                   <input type="submit" name="buy" value="Buy" />
+				    <form action="basket" method="post">
+				       <input type="hidden" name="add" value="${o.id}">
+	                   <input type="submit" value="Buy" />
 	               </form>
 	            </td>
 			</tr>
