@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import util.DBConnector;
 import beans.StockBean;
+import beans.UserBean;
 
 /**
  * Servlet implementation class BakeryServlet
@@ -40,13 +41,26 @@ public class AdminServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		try {
+			UserBean user = LoginServlet.getUser(request);
+			boolean isAdmin = user.isAdmin();
+			if (isAdmin == true) {
+				response.setContentType("text/html");
+				StockBean stock = new StockBean("");
+				request.setAttribute("stock", stock);
+				getServletContext().getRequestDispatcher("/admin.jsp").forward(
+						request, response);
+			} else {
+				response.setContentType("text/html");
+				getServletContext().getRequestDispatcher("/not_admin.jsp")
+						.forward(request, response);
+			}
 
-		response.setContentType("text/html");
-		StockBean stock = new StockBean("");
-		request.setAttribute("stock", stock);
-		getServletContext().getRequestDispatcher("/admin.jsp").forward(request,
-				response);
-
+		} catch (NullPointerException e) {
+			response.setContentType("text/html");
+			getServletContext().getRequestDispatcher("/not_admin.jsp").forward(
+					request, response);
+		}
 	}
 
 	protected void doPost(HttpServletRequest request,
