@@ -8,7 +8,8 @@
 <title>TheBakery::profile</title>
 </head>
 <body>
-	<h1>Profile</h1>
+	<h1>Welcome!!!</h1>
+	<h2>This is your profile</h2>>
 	<table >
 	    <tr>
 	       <td><b>Username: </b></td>
