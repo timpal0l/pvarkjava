@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.StockBean;
+import beans.UserBean;
 
 /**
  * Servlet implementation class BakeryServlet
@@ -33,8 +34,13 @@ public class ProfileServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		getServletContext().getRequestDispatcher("/profile.jsp").forward(request,
-				response);
+		if(LoginServlet.getUser(request) != null) {
+			request.setAttribute("user", LoginServlet.getUser(request));
+			getServletContext().getRequestDispatcher("/profile.jsp").forward(request,
+					response);
+		} else {
+			response.sendRedirect("login");
+		}
 	}
 
 	protected void doPost(HttpServletRequest request,

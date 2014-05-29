@@ -17,7 +17,7 @@ import beans.ProductBean;
  * Servlet implementation class BakeryServlet
  */
 
-@WebServlet("/checkoit")
+@WebServlet("/checkout")
 public class CheckoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -36,7 +36,7 @@ public class CheckoutServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		request.setAttribute("basket", BasketServlet.getBasket(request));
-		getServletContext().getRequestDispatcher("/basket.jsp").forward(request,
+		getServletContext().getRequestDispatcher("/checkout.jsp").forward(request,
 				response);
 	}
 

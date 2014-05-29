@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.servlet.ServletConfig;
@@ -22,6 +23,12 @@ import beans.StockBean;
 
 @WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
+	
+	DBConnector dbms = new DBConnector();
+	Connection conn = dbms.getConnection();
+	int records =0;
+	
+	
 	private static final long serialVersionUID = 1L;
 
 	public RegisterServlet() {
@@ -51,11 +58,14 @@ public class RegisterServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		String address = request.getParameter("address");
 		
-		DBConnector dbms = new DBConnector();
-		Connection conn = dbms.getConnection();
-		
+		if(checkUsername(username)!=0)
+			getServletContext().getRequestDispatcher("/register_error.jsp").forward(request,
+					response);
+		else
+		{
 		try{
 		PreparedStatement ps = conn.prepareStatement("insert into user(username, password, address) values(?, ?, ?)");
+		
 		
 		  ps.setString(1, username); 
 		  ps.setString(2, password);
@@ -69,6 +79,22 @@ public class RegisterServlet extends HttpServlet {
         }
 		
 		response.sendRedirect("profile");
+		}
+	}
+	
+	public int checkUsername(String u){
+		
+		try{
+		PreparedStatement ps1 = conn.prepareStatement("SELECT COUNT(*) FROM user Where username = ? ");
+		ps1.setString(1, u);
+		ResultSet rs = ps1.executeQuery();
+		while (rs.next()) {
+		      records = rs.getInt(1);
+		    }
+		}catch(SQLException e){
+			
+		}
+		return records;
 	}
 
 }
