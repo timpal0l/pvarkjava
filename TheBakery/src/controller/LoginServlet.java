@@ -71,6 +71,7 @@ public class LoginServlet extends HttpServlet {
 				user.setId(rs.getInt("user_id"));
 				user.setName(rs.getString("username"));
 				user.setAddress(rs.getString("address"));
+				user.setAdmin(rs.getBoolean("admin"));
 				users.put(request.getSession().getId(), user);
 				response.sendRedirect("profile");
 			} else {
@@ -85,6 +86,11 @@ public class LoginServlet extends HttpServlet {
 	public static UserBean getUser(HttpServletRequest request) {
 		String session = request.getSession().getId();
 		return users.get(session);
+	}
+
+	public static void logout(HttpServletRequest request) {
+		String session = request.getSession().getId();
+		users.remove(session);
 	}
 
 }

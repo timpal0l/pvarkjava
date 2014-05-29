@@ -42,7 +42,6 @@ public class StockBean {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-        System.out.println(stock);
 		return stock;
 	}
 
@@ -68,7 +67,6 @@ public class StockBean {
         } catch(SQLException e) {
             e.printStackTrace();
         }
-        System.out.println(components);
         return components;
     }
 }

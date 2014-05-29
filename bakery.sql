@@ -147,7 +147,6 @@ DROP TABLE IF EXISTS `order_product`;
 CREATE TABLE `order_product` (
   `order_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
-  PRIMARY KEY (`order_id`,`product_id`),
   CONSTRAINT `order_product_imbf1` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`) ON UPDATE CASCADE ON DELETE CASCADE,
   CONSTRAINT `order_product_imbf2` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

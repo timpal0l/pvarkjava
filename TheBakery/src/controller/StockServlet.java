@@ -30,7 +30,8 @@ public class StockServlet extends HttpServlet {
 	public void destroy() {
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		
 		response.setContentType("text/html");
 		String parameter = request.getParameter("search") == null ? "" : request.getParameter("search");
