@@ -33,7 +33,48 @@
 			</tr>
 		</c:forEach>
 	</table>
-	
 
+    <form action="product" method="post">
+	<table class="admin-table">
+		<tr>
+			<td><b>Add product</b></td>
+		</tr>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" name="product"></td>
+			</tr>
+			<tr>
+                <td>Description:</td>
+                <td><input type="text" name="description"></td>
+            </tr>
+            <tr>
+                <td>Price:</td>
+                <td><input type="text" name="price"></td>
+            </tr>
+			<tr>
+				<td><input type="submit" value="Create"></td>
+			</tr>
+		</table>
+	</form>
+    <form action="product" method="post">
+	<table>		
+		<tr>
+			<td><p><b>Add ingredient to product:</b></p></td>
+		</tr>
+			<tr>
+				<td><select name="product">
+						<c:forEach items="${stock.stock}" var="o">
+							<option value="${o.id}">${o.name}</option>
+						</c:forEach>
+				</select></td>
+				<td><select name="component">
+						<c:forEach items="${stock.components}" var="o">
+							<option value="${o.id}">${o.name}</option>
+						</c:forEach>
+				</select></td>
+				<td><input type="submit" value="Add"></td>
+			</tr>
+		</table>
+	</form>
 </body>
 </html>

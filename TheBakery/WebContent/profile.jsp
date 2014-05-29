@@ -10,19 +10,15 @@
 <body>
 	<h1>Welcome!!!</h1>
 	<h2>This is your profile</h2>
-	<table >
-	    <tr>
-	       <td><b>Username: </b></td>
-	       <td>${user.name}</td>
-	    </tr>  
-        
-			
-			
-			<tr>
-				<td><b>Address: </b></td>
-	       		<td>${user.address}</td>
-	       </tr>
-	       
+	<table>
+		<tr>
+			<td><b>Username: </b></td>
+			<td>${user.name}</td>
+		</tr>
+		<tr>
+			<td><b>Address: </b></td>
+			<td>${user.address}</td>
+		</tr>
 	</table>
 </body>
 </html>

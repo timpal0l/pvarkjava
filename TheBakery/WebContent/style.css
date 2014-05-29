@@ -96,3 +96,8 @@ header {
     background-color: #A8E7FF;
     cursor: pointer;
 }
+
+.admin-table tr, .admin-table td {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}

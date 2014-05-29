@@ -71,18 +71,20 @@ public class CheckoutServlet extends HttpServlet {
 				if(rs.next()) {
 					int orderId = rs.getInt(1);
 					for(ProductBean product : basket.getBasket()) {
+						for(ComponentBean component : product.getComponentList()) {
+							PreparedStatement ps3 = conn.prepareStatement(
+									"UPDATE `component` SET amount = amount-1 WHERE id = ? AND amount > 0");
+							ps3.setInt(1, component.getId());
+							int result = ps3.executeUpdate();
+							if(result == 0) {
+								throw new IllegalArgumentException(product.getName());
+							}
+						}
 						PreparedStatement ps2 = conn.prepareStatement(
 								"INSERT INTO `order_product` (order_id, product_id) VALUES (?, ?)");
 						ps2.setInt(1, orderId);
 						ps2.setInt(2, product.getId());
 						ps2.executeUpdate();
-						for(ComponentBean component : product.getComponentList()) {
-							PreparedStatement ps3 = conn.prepareStatement(
-									"UPDATE `component` SET amount = amount-1 WHERE id = ?");
-							ps3.setInt(1, component.getId());
-							ps3.executeUpdate();
-						}
-
 					}
 					basket.clear();
 					getServletContext().getRequestDispatcher("/thankyou.jsp").forward(request,
@@ -93,6 +95,10 @@ public class CheckoutServlet extends HttpServlet {
 				}
 			} catch(SQLException e) {
 				e.printStackTrace();
+			} catch(IllegalArgumentException e) {
+				request.setAttribute("product", e.getMessage());
+				getServletContext().getRequestDispatcher("/checkout_error.jsp").forward(request,
+						response);
 			}
 		}
 	}
