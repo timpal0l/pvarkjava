@@ -12,9 +12,9 @@
 	<h1>The Bakery</h1>
 	<table class="stock-table">
 	    <tr>
-	       <td>Name</td>
-	       <td>Price</td>
-	       <td>Stock</td>
+	       <td><b>Name</b></td>
+	       <td><b>Price</b></td>
+	       <td><b>Stock</b></td>
 	    </tr>  
         
        <c:forEach items="${stock.stock}" var="o">
@@ -30,7 +30,10 @@
 	            </td>
 			</tr>
 		</c:forEach>
-
 	</table>
+	<form action="stock" method="get">
+	    <input type="text" name="search" value="">
+	    <input type="submit" value="Search" />
+	</form>
 </body>
 </html>

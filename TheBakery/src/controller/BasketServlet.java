@@ -34,9 +34,6 @@ public class BasketServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		int parameter = Integer.parseInt(request.getParameter("id"));
-		ProductBean product = new ProductBean(parameter);
-		request.setAttribute("product", product);
 		getServletContext().getRequestDispatcher("/basket.jsp").forward(request,
 				response);
 	}
