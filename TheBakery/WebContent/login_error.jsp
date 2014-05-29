@@ -7,7 +7,29 @@
 <title>TheBakery::login error</title>
 </head>
 <body>
-	<h1>Login error</h1>
-	<c>//display a login error</c>
+	<h1>Login error <img src="./images/icons/error.jpeg" alt="Error"></h1>
+	
+	
+		<table border="0" cellspacing="5" align="center">
+		
+				
+				<tr>
+					
+					<th align="right">Your username or password are wrong!</th>
+					
+				</tr>
+				
+				<tr>
+					<td align="right">
+					 
+					 <a href="login.jsp">
+						
+						<p >Try Again</p>
+					</a>
+					</td>
+				</tr>
+				
+			</table>
+		
 </body>
 </html>
