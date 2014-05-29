@@ -9,17 +9,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.ProductBean;
 import beans.StockBean;
 
 /**
  * Servlet implementation class BakeryServlet
  */
 
-@WebServlet("/stock")
-public class StockServlet extends HttpServlet {
+@WebServlet("/cart")
+public class CartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public StockServlet() {
+	public CartServlet() {
 		super();
 	}
 
@@ -33,10 +34,10 @@ public class StockServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		String parameter = request.getParameter("search") == null ? "" : request.getParameter("search");
-		StockBean stock = new StockBean(parameter);
-		request.setAttribute("stock", stock);
-		getServletContext().getRequestDispatcher("/stock.jsp").forward(request,
+		int parameter = Integer.parseInt(request.getParameter("id"));
+		ProductBean product = new ProductBean(parameter);
+		request.setAttribute("product", product);
+		getServletContext().getRequestDispatcher("/product.jsp").forward(request,
 				response);
 	}
 

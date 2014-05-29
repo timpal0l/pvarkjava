@@ -8,25 +8,25 @@
 		<nav class="menu">
 			<ul>
 				<li>
-					<a class="page" href="index.jsp">
+					<a class="page" href="stock">
 						<img src="./images/icons/home.svg" alt="Home">
 						<p class="page-name">Home</p>
 					</a>
 				</li>
 				<li>
-					<a class="page" href="basket.jsp">
+					<a class="page" href="basket">
 						<img src="./images/icons/basket.svg" alt="Basket">
 						<p class="page-name">Basket</p>
 					</a>
 				</li>
 				<li>
-					<a class="page" href="admin.jsp">
+					<a class="page" href="admin">
 						<img src="./images/icons/admin.svg" alt="Admin">
 						<p class="page-name">Admin</p>
 					</a>
 				</li>
 				<li>
-					<a class="page" href="profile.jsp">
+					<a class="page" href="profile">
 						<img src="./images/icons/profile.svg" alt="Profile">
 						<p class="page-name">Profile</p>
 					</a>

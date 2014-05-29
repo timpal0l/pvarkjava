@@ -8,6 +8,6 @@
 </head>
 <body>
 	<h1>Logout</h1>
-	<c>//display a nice logout message to the $User.</c>
+	<center>//display a nice logout message to the $User.</center>
 </body>
 </html>
