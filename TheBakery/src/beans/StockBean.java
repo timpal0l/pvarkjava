@@ -42,6 +42,7 @@ public class StockBean {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+        System.out.println(stock);
 		return stock;
 	}
 
@@ -50,7 +51,7 @@ public class StockBean {
         try {
         	DBConnector dbms = new DBConnector();
     		Connection conn = dbms.getConnection();
-            PreparedStatement ps = conn.prepareStatement("SELECT id, name, amount, FROM product WHERE name LIKE ?");
+            PreparedStatement ps = conn.prepareStatement("SELECT id, name, amount FROM component WHERE name LIKE ?");
             ps.setString(1, "%" + parameter + "%");
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
@@ -67,6 +68,7 @@ public class StockBean {
         } catch(SQLException e) {
             e.printStackTrace();
         }
+        System.out.println(components);
         return components;
     }
 }

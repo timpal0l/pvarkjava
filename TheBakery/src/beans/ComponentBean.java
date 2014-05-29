@@ -1,15 +1,10 @@
 package beans;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ComponentBean {
-	
+
 	int id, amount;
 	String name;
 
-	List<String> ProductList = new ArrayList<String>();
-	
 	public ComponentBean(int id, int amount, String name) {
 		setId(id);
 		setAmount(amount);
