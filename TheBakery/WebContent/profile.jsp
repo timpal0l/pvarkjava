@@ -9,6 +9,19 @@
 </head>
 <body>
 	<h1>Profile</h1>
-	<center>//have to be logged in to show and edit the $Users profile.</center>
+	<table >
+	    <tr>
+	       <td><b>Username: </b></td>
+	       <td>${user.name}</td>
+	    </tr>  
+        
+			
+			
+			<tr>
+				<td><b>Address: </b></td>
+	       		<td>${user.address}</td>
+	       </tr>
+	       
+	</table>
 </body>
 </html>
