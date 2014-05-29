@@ -15,11 +15,11 @@ import beans.StockBean;
  * Servlet implementation class BakeryServlet
  */
 
-@WebServlet("/login")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/profile")
+public class ProfileServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public LoginServlet() {
+	public ProfileServlet() {
 		super();
 	}
 
@@ -33,14 +33,12 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		getServletContext().getRequestDispatcher("/login.jsp").forward(request,
+		getServletContext().getRequestDispatcher("/profile.jsp").forward(request,
 				response);
 	}
 
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		String name = request.getParameter("name");
-		String pass = request.getParameter("pass");
 	}
 
 }

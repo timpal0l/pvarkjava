@@ -16,11 +16,11 @@ import beans.StockBean;
  * Servlet implementation class BakeryServlet
  */
 
-@WebServlet("/cart")
-public class CartServlet extends HttpServlet {
+@WebServlet("/basket")
+public class BasketServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public CartServlet() {
+	public BasketServlet() {
 		super();
 	}
 
@@ -37,7 +37,7 @@ public class CartServlet extends HttpServlet {
 		int parameter = Integer.parseInt(request.getParameter("id"));
 		ProductBean product = new ProductBean(parameter);
 		request.setAttribute("product", product);
-		getServletContext().getRequestDispatcher("/product.jsp").forward(request,
+		getServletContext().getRequestDispatcher("/basket.jsp").forward(request,
 				response);
 	}
 
