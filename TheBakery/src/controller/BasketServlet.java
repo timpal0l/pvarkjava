@@ -67,12 +67,9 @@ public class BasketServlet extends HttpServlet {
 		if(!exists) {
 			basket = new BasketBean();
 			baskets.put(session, basket);
-			System.out.println("Does not exist.");
 		} else {
 			basket = baskets.get(session);
-			System.out.println(basket.getBasket());
 		}
 		return basket;
 	}
-
 }
