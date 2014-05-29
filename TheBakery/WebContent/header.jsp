@@ -32,7 +32,7 @@
 					</a>
 				</li>
 				<li>
-					<a class="page" href="login.jsp">
+					<a class="page" href="login">
 						<img src="./images/icons/login.svg" alt="Login">
 						<p class="page-name">Login</p>
 					</a>

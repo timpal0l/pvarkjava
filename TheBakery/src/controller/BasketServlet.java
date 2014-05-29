@@ -9,17 +9,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.ProductBean;
 import beans.StockBean;
 
 /**
  * Servlet implementation class BakeryServlet
  */
 
-@WebServlet("/login")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/basket")
+public class BasketServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public LoginServlet() {
+	public BasketServlet() {
 		super();
 	}
 
@@ -33,14 +34,15 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		getServletContext().getRequestDispatcher("/login.jsp").forward(request,
+		int parameter = Integer.parseInt(request.getParameter("id"));
+		ProductBean product = new ProductBean(parameter);
+		request.setAttribute("product", product);
+		getServletContext().getRequestDispatcher("/basket.jsp").forward(request,
 				response);
 	}
 
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		String name = request.getParameter("name");
-		String pass = request.getParameter("pass");
 	}
 
 }
