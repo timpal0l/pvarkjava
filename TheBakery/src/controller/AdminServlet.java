@@ -30,15 +30,21 @@ public class AdminServlet extends HttpServlet {
 	public void destroy() {
 	}
 
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		response.setContentType("text/html");
-		getServletContext().getRequestDispatcher("/admin.jsp").forward(request,
-				response);
+		StockBean stock = new StockBean("");
+		request.setAttribute("stock", stock);
+		getServletContext().getRequestDispatcher("/admin.jsp").forward(request, response);
+
+		
+		
 	}
 
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+		
 	}
 
 }
